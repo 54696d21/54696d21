@@ -3,26 +3,17 @@ import json
 import datetime
 import os
 import time
+from Contributor import COn
 
 URL_VALIDATED = "https://commonvoice.mozilla.org/api/v1/de/clips/votes/leaderboard?cursor=[1,23565]"
 URL_RECORDED = "https://commonvoice.mozilla.org/api/v1/de/clips/leaderboard?cursor=[1,23565]"
 
 
-class Contributor:
-    def __init__(self) -> None:
-        self.username = None
-        self.validatedClipsBeginning = None
-        self.recordedClipsBeginning = None
-        self.currentRecordedClips = None
-        self.currentValidatedClips = None
-        self.clientHash = None
-
-        self.validatedApiResonseContent = None
-        self.recordedApiResonseContent = None
 
 
 class Data:
     def __init__(self) -> None:
+    # def __init__(self, **kwargs):
         self.validatedApiResonseContent = None
         self.recordedApiResonseContent = None
 
@@ -38,6 +29,7 @@ class Data:
         for i in self.recordedApiResonseContent:
             i["avatarClipUrl"] = None
             i["avatar_url"] = None
+    
 
 
 if __name__ == "__main__":
